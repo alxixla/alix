@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Alix Portfolio</title>
+    <meta name="description" content="Welcome to my website!">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Front-End Developer, Responsive Web Design, Website Performance, Web Development Services, User Experience, Mobile Optimization">
+    <meta name="description" content="Professional front-end development services to create stunning, responsive websites. Improve your site's performance and user experience with expert web development.">
+    <meta name="title" content="Front-End Developer | Enhance Website Responsiveness & Performance">
+    <meta name="author" content="Alix LY">
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer type="text/javascript" src="main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@800&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+  <header id="home">
+    <nav class="navbar" id="navbar">
+      <li><a href="#home"><h2 class="logo syne">Alix</h2></a></li>
+        <ul class="menu">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">WORK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="header-container">
+      <div class="header-text"> <!-- Grid Item 1 -->
+        <div class="text">
+          <h1 class="syne">FRONT END</h1>
+          <h1 class="syne">DEVELOPER</h1>
+        </div>
+      </div>
+      <div class="empty"></div> <!-- Grid Item 2 -->
+      <div class="empty"></div> <!-- Grid Item 3 -->
+      <div class="empty"></div> <!-- Grid Item 4 -->
+      <div class="header-text2"> <!-- Grid Item 5 -->
+        <div class="text2">
+          <p class="syne" id="welcomeText">Welcome</p>
+        </div>
+      </div>
+      <div class="empty"></div> <!-- Grid Item 6 -->
+      <div class="empty"></div> <!-- Grid Item 7 -->
+      <div class="empty"></div> <!-- Grid Item 8 -->
+      <div class="header-text3"> <!-- Grid Item 9 -->
+        <div class="text3">
+          <h1 class="syne">PAINTER</h1>
+          <h1 class="syne">DRAWER</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about-section">
+    <h2 class="section-title syne reveal-text">ABOUT ME</h2>
+      <div class="about-container">
+        <div class="about-text">
+           <p>Hello! I'm Alix, a self-taught front-end developer, painter and drawer. My coding journey began in 2019 during the Covid-19 pandemic. Stuck at home, I turned to YouTube videos to grasp the fundamentals of web development. Soon thereafter, I embarked on building my own website to showcase my art and found immense joy in the process. Eager to expand my skills, I enrolled in a free online course on <a href="https://www.freecodecamp.org/" target="_blank"><strong>FreeCodeCamp</strong></a>, which greatly enhanced my coding abilities. Subsequently, I acquired a <a href="https://www.freecodecamp.org/certification/fcc846122f3-1cf3-45fc-8ca6-6a45fa5705eb/responsive-web-design" target="_blank"><strong>Certificate in Responsive Design</strong></a>, and ever since, I've dedicated myself to coding and mastering new technologies nearly every day.
+           </p> 
+        </div>
+        <div class="about-image image-reveal">
+          <img src="imgs/sydney.jpeg" alt="Me in Sydney" loading="lazy"/>
+        </div>
+      </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2 class="section-title syne reveal-text">WORK</h2>
+      <div class="projects-grid">
+        <div class="grid-item project1">
+          <a href="https://alyx-art.netlify.app/" class="project" target="_blank">
+            <img class="project-image image-reveal" src="imgs/project1.png" alt="art portfolio" loading="lazy"/>
+          </a>
+          <p class="hidden">Art portfolio - Alyx Art</p>
+        </div>
+        <div class="grid-item work-title project1">
+          <h3 class="left">ART PORTFOLIO</h3>
+          <p class="left">Alyx Art</p>
+        </div>
+        <div class="grid-item work-title project2">
+          <h3 class="right">ACTOR PORTFOLIO</h3>
+          <p class="right">Tony Bodin</p>
+        </div>
+        <div class="grid-item project2">
+          <a href="https://tonybodin.github.io/Tony-Bodin/" class="project project-tile" target="_blank">
+            <img class="project-image image-reveal" src="imgs/tony.jpg" alt="Tony Bodin" loading="lazy"/>
+          </a>
+          <p class="hidden">Actor Portfolio - Tony Bodin</p>
+        </div>
+        <div class="grid-item project3">
+          <a href="https://www.freecodecamp.org/certification/fcc846122f3-1cf3-45fc-8ca6-6a45fa5705eb/responsive-web-design" class="project" target="_blank">
+            <img class="project-image image-reveal" src="imgs/survey.png" alt="img pizza" loading="lazy"/>
+          </a>
+          <p class="hidden">Restaurant survey -  Angelo Pizza</p>
+        </div>
+        <div class="grid-item work-title project3">
+          <h3 class="left">RESTAURANT SURVEY</h3>
+          <p class="left">Angelo Pizza</p>
+        </div>
+        <div class="grid-item work-title project4">
+          <h3 class="right">TRIBUTE PAGE</h3>
+          <p class="right">Hubert Reeves</p>
+        </div>
+        <div class="grid-item project4">
+          <a href="https://www.freecodecamp.org/certification/fcc846122f3-1cf3-45fc-8ca6-6a45fa5705eb/responsive-web-design" class="project project-tile" target="_blank">
+            <img class="project-image image-reveal" src="imgs/tribute.png" alt="img Hubert Reeves" loading="lazy"/>
+          </a>
+          <p class="hidden">Tribute page - Hubert Reeves</p>
+        </div>
+      </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2 class="section-title syne reveal-text padding-bottom">CONTACT</h2>
+      <div class="contact-container">
+        <div class="contact-p">
+          <p>I'd be delighted to assist in creating websites for diverse projects or enhancing the responsiveness of existing sites. Let's collaborate to bring your vision to life and ensure an optimal user experience across all devices. Please feel free to contact me to discuss your project needs or any inquiries</p>
+        </div>
+        <div class="contact-form">
+            <!--Google form-->
+            <script type="text/javascript"> 
+                let submitted = false;
+                function formSubmit() {
+                    submitted = true;
+                document.getElementById("myForm").submit();
+              }
+            </script>
+              <iframe name="invisibleFrame" id="invisibleFrame" style="display:none;"onload="if(submitted) {window.location='index.html';}">
+              </iframe>
+                <div id="ggl-form">
+                  <form action="https://docs.google.com/forms/d/e/1FAIpQLSe5dkIBMYLPtfDbO_ABMYYx0hWu5bokwR9k4eoveORSa_uL0g/formResponse" method="post" target="invisibleFrame" id="myForm" onsubmit="formSubmit();">
+                    <div class="wave-group reveal-text">
+                      <input required type="text" class="input" name="entry.311423501">
+                      <span class="bar"></span>
+                      <label class="label">
+                        <span class="label-char" style="--index: 0">N</span>
+                        <span class="label-char" style="--index: 1">a</span>
+                        <span class="label-char" style="--index: 2">m</span>
+                        <span class="label-char" style="--index: 3">e*</span>
+                      </label>
+                    </div>
+                    <div class="wave-group reveal-text">
+                      <input required type="text" class="input" name="entry.1044244835">
+                      <span class="bar"></span>
+                      <label class="label">
+                        <span class="label-char" style="--index: 0">S</span>
+                        <span class="label-char" style="--index: 1">u</span>
+                        <span class="label-char" style="--index: 2">b</span>
+                        <span class="label-char" style="--index: 3">j</span>
+                        <span class="label-char" style="--index: 1">e</span>
+                        <span class="label-char" style="--index: 2">c</span>
+                        <span class="label-char" style="--index: 3">t*</span>
+                      </label>
+                    </div>
+                    <div class="wave-group reveal-text">
+                      <input required type="text" class="input" name="entry.1788003859">
+                      <span class="bar"></span>
+                      <label class="label">
+                        <span class="label-char" style="--index: 0">E</span>
+                        <span class="label-char" style="--index: 1">m</span>
+                        <span class="label-char" style="--index: 2">a</span>
+                        <span class="label-char" style="--index: 3">i</span>
+                        <span class="label-char" style="--index: 3">l*</span>
+                      </label>
+                    </div>
+                    <div class="wave-group reveal-text">
+                      <textarea required type="text" rows="5" class="input" name="entry.1548018459"></textarea>
+                      <span class="bar"></span>
+                      <label class="label">
+                        <span class="label-char" style="--index: 0">M</span>
+                        <span class="label-char" style="--index: 1">e</span>
+                        <span class="label-char" style="--index: 2">s</span>
+                        <span class="label-char" style="--index: 3">s</span>
+                        <span class="label-char" style="--index: 1">a</span>
+                        <span class="label-char" style="--index: 2">g</span>
+                        <span class="label-char" style="--index: 3">e*</span>
+                      </label>
+                    </div>
+                    <p class="required">*required</p>
+                    <button id="submitButton" type="submit"><span class="skew">Submit</span></button>
+                  </form>
+                </div>
+            <!--End google form-->
+        </div>
+      </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="copyright-footer">
+        <p>All Rights Reserved &copy;<script>document.write(new Date().getFullYear())</script></p>
+      </div>
+      <div class="socials footer">  
+        <a href="https://www.instagram.com/alyxcalligraphy/" class="icon" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://www.youtube.com/@-CalligraphY-" class="icon" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://github.com/alxixla" class="icon" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>        
+      </div>
+      <div class="credit-container">
+        <div id="mySidenav" class="sidenav">
+          <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2 class="sidenavtitle syne">Credits</h2>
+          <h2 class="syne">Fonts</h2>
+            <a href="https://fonts.google.com/specimen/Syne" target="_blank">Syne</a>
+            <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserra</a>
+          <h2 class="syne">Images</h2>
+            <a href="https://www.thecanadianencyclopedia.ca/en/article/hubert-reeves" target="_blank">Hubert Reeves</a>
+            <a href="https://en.wikipedia.org/wiki/The_Creation_of_Adam" target="_blank">Michelangelo</a>
+            <a href="https://tonybodin.github.io/Tony-Bodin/" target="_blank">Tony Bodin</a>
+        </div>
+        <div class="footer-credits" onclick="toggleNav()">Credits</div>
+      </div>
+    </div>
+  </footer>
+  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!--Ionicons icons-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
