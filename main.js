@@ -1,28 +1,33 @@
-//--------------- BLURRY BACKGROUND EFFECT -----------------
+//--------------- NAVBAR BLURRY BACKGROUND EFFECT & PROGRESS BAR -----------------
 document.addEventListener("scroll", function() {
-    // Get the current scroll position
-    let scrollPosition = window.scrollY;
+  // Navbar blur effect
+  let scrollPosition = window.scrollY;
+  let navbar = document.querySelector(".navbar");
 
-    // Check if scroll position is greater than or equal to 40px
-    if (scrollPosition >= 40) {
-        // Calculate blur intensity based on scroll position
-        let blurIntensity = Math.min((scrollPosition - 40) / 50, 10); // Adjust as needed
+  if (scrollPosition >= 40) {
+    let blurIntensity = Math.min((scrollPosition - 40) / 50, 10);
+    navbar.style.backdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
+    navbar.style.webkitBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
+    navbar.style.mozBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
+    navbar.style.msBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
+    navbar.style.oBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
+  } else {
+    navbar.style.backdropFilter = "none";
+    navbar.style.webkitBackdropFilter = "none";
+    navbar.style.mozBackdropFilter = "none";
+    navbar.style.msBackdropFilter = "none";
+    navbar.style.oBackdropFilter = "none";
+  }
 
-        // Apply the blur effect with a darker background
-        let navbar = document.querySelector(".navbar");
-
-        navbar.style.backdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
-
-        // Add vendor prefixes for compatibility
-        navbar.style.webkitBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
-        navbar.style.mozBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
-        navbar.style.msBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
-        navbar.style.oBackdropFilter = `blur(${blurIntensity}px) brightness(0.8)`;
-    } else {
-        // If scroll position is less than 40px, remove the blur effect
-        document.querySelector(".navbar").style.backdropFilter = "none";
-    }
+  // Progress bar (left to right)
+  let progressBar = document.getElementById("progress-bar");
+  let scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  let scrollPercent = (scrollPosition / scrollHeight) * 100;
+  progressBar.style.width = scrollPercent + "%";
+  progressBar.style.left = "0";
+  progressBar.style.right = "auto";
 });
+
 //--------------- CHANGE BACKGROUND COLOR ON SCROLL -----------------
 document.addEventListener('DOMContentLoaded', function () {
   let aboutSection = document.querySelector('.about-section');
@@ -53,27 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-//--------------- CHANGE TEXT ELEMENT -----------------
-  // Get the welcome text element
-  const welcomeTextElement = document.getElementById("welcomeText");
-
-  // Array of different text values
-  const textValues = [
-    "Welcome",
-    "Bienvenue"
-  ];
-
-  let currentIndex = 0;
-
-  // Function to update the text every second
-  function updateText() {
-    welcomeTextElement.textContent = textValues[currentIndex];
-    currentIndex = (currentIndex + 1) % textValues.length;
-  }
-
-  // Set an interval to call the updateText function every second (1000 milliseconds)
-  setInterval(updateText, 1500);
 
 //--------------- TEXT REVEAL -----------------
   window.addEventListener('scroll', reveal);
@@ -129,11 +113,26 @@ function toggleNav() {
   }
 }
 
+//--------------SCROLLING LOGO CHANGE -----------------
+document.addEventListener("DOMContentLoaded", () => {
+  const textLogo = document.querySelector(".navbar li");
+  const imgLogo = document.querySelector(".logo-img");
 
+  let lastScrollTop = 0;
 
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down
+      textLogo.classList.add("hidden");
+      imgLogo.classList.add("visible");
+    } else {
+      // Scrolling up
+      textLogo.classList.remove("hidden");
+      imgLogo.classList.remove("visible");
+    }
 
-
-
-
-
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative
+  });
+});
