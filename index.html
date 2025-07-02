@@ -18,12 +18,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/logo.png"> <!--Browser tab logo -->
   </head>
 
 <body>
   <header id="home">
+    <div id="progress-bar"></div>
     <nav class="navbar" id="navbar">
-      <li><a href="#home"><h2 class="logo syne">Alix</h2></a></li>
+      <li><a href="#home"><h2 class="logo syne">ALIX</h2></a></li>
+      <a href="#home"><img src="imgs/logo.png" alt="logo" class="logo-img"></a>
         <ul class="menu">
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#projects">WORK</a></li>
@@ -31,27 +34,13 @@
         </ul>
     </nav>
     <div class="header-container">
-      <div class="header-text"> <!-- Grid Item 1 -->
+      <div class="header-text">
         <div class="text">
-          <h1 class="syne">FRONT END</h1>
-          <h1 class="syne">DEVELOPER</h1>
-        </div>
-      </div>
-      <div class="empty"></div> <!-- Grid Item 2 -->
-      <div class="empty"></div> <!-- Grid Item 3 -->
-      <div class="empty"></div> <!-- Grid Item 4 -->
-      <div class="header-text2"> <!-- Grid Item 5 -->
-        <div class="text2">
-          <p class="syne" id="welcomeText">Welcome</p>
-        </div>
-      </div>
-      <div class="empty"></div> <!-- Grid Item 6 -->
-      <div class="empty"></div> <!-- Grid Item 7 -->
-      <div class="empty"></div> <!-- Grid Item 8 -->
-      <div class="header-text3"> <!-- Grid Item 9 -->
-        <div class="text3">
-          <h1 class="syne">PAINTER</h1>
-          <h1 class="syne">DRAWER</h1>
+          <h1 class="hover-letters no-break">
+            <span class="syne">F</span><span class="syne">R</span><span class="syne">O</span><span class="syne">N</span><span class="syne">T</span>
+            <span class="syne">E</span><span class="syne">N</span><span class="syne">D</span><br>
+            <span class="syne">D</span><span class="syne">E</span><span class="syne">V</span><span class="syne">E</span><span class="syne">L</span><span class="syne">O</span><span class="syne">P</span><span class="syne">E</span><span class="syne">R</span>
+          </h1>
         </div>
       </div>
     </div>
@@ -192,8 +181,8 @@
   </section>
 
   <footer>
-    <div class="footer-container">
-      <div class="copyright-footer">
+    <div class="footer-container-top">
+      <div class="footer-copyright">
         <p>All Rights Reserved &copy;<script>document.write(new Date().getFullYear())</script></p>
       </div>
       <div class="socials footer">  
@@ -207,6 +196,17 @@
           <ion-icon name="logo-github"></ion-icon>
         </a>        
       </div>
+      <div class="footer-credits">
+        <div class="footer-credits" onclick="toggleNav()">Credits</div>
+      </div>
+    </div>
+      <div class="footer-line"></div>
+    <div class="footer-container-bottom">
+      <div class="footer-logos">
+        <a href="#home">
+          <img src="imgs/logo.png" alt="#" class="footer-logos">
+        </a>
+      </div>
       <div class="credit-container">
         <div id="mySidenav" class="sidenav">
           <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
@@ -219,29 +219,10 @@
             <a href="https://en.wikipedia.org/wiki/The_Creation_of_Adam" target="_blank">Michelangelo</a>
             <a href="https://tonybodin.github.io/acteur/" target="_blank">Tony Bodin</a>
         </div>
-        <div class="footer-credits" onclick="toggleNav()">Credits</div>
       </div>
     </div>
   </footer>
-  
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!--Ionicons icons-->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
