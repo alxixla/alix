@@ -1,0 +1,466 @@
+<html lang="en">
+
+  <head>
+    <title>Alix Portfolio</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Welcome to my website!">
+    <meta name="keywords" content="Front-End Developer, Responsive Web Design, Website Performance, Web Development Services, User Experience, Mobile Optimization">
+    <meta name="description" content="Professional front-end development services to create stunning, responsive websites. Improve your site's performance and user experience with expert web development.">
+    <meta name="title" content="Front-End Developer | Enhance Website Responsiveness & Performance">
+    <meta name="author" content="Alix LY">
+    <link rel="icon" type="image/png" href="imgs/browserlogo.png"> <!--Browser tab logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script defer type="text/javascript" src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-error-container": "#93000a",
+                            "inverse-primary": "#c8c6c5",
+                            "tertiary-container": "#1c1b1b",
+                            "on-surface-variant": "#444748",
+                            "secondary-fixed": "#e5e2e1",
+                            "surface-container-low": "#f8f3ed",
+                            "on-tertiary-fixed-variant": "#474646",
+                            "on-tertiary-container": "#858383",
+                            "on-secondary": "#ffffff",
+                            "surface-container": "#f2ede7",
+                            "surface": "#fef9f2",
+                            "on-tertiary-fixed": "#1c1b1b",
+                            "secondary-container": "#e5e2e1",
+                            "outline-variant": "#c4c7c7",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "primary-fixed": "#e5e2e1",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed": "#1c1b1b",
+                            "on-background": "#1d1b18",
+                            "inverse-surface": "#32302c",
+                            "surface-container-high": "#ece7e1",
+                            "on-surface": "#1d1b18",
+                            "on-primary-container": "#858383",
+                            "tertiary-fixed": "#e5e2e1",
+                            "primary": "#000000",
+                            "primary-fixed-dim": "#c8c6c5",
+                            "inverse-on-surface": "#f5f0ea",
+                            "primary-container": "#1c1b1b",
+                            "secondary": "#5f5e5e",
+                            "on-error": "#ffffff",
+                            "background": "#fef9f2",
+                            "surface-container-lowest": "#ffffff",
+                            "on-secondary-fixed-variant": "#474646",
+                            "outline": "#747878",
+                            "on-tertiary": "#ffffff",
+                            "surface-container-highest": "#e7e2dc",
+                            "surface-dim": "#ded9d3",
+                            "error": "#ba1a1a",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "tertiary": "#000000",
+                            "surface-bright": "#fef9f2",
+                            "on-primary-fixed-variant": "#474646",
+                            "on-primary": "#ffffff",
+                            "surface-tint": "#5f5e5e",
+                            "tertiary-fixed-dim": "#c8c6c5",
+                            "surface-variant": "#e7e2dc",
+                            "on-secondary-container": "#656464"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "fontFamily": {
+                            "headline": ["Space Grotesk"],
+                            "body": ["Manrope"],
+                            "label": ["Manrope"]
+                        }
+                    },
+                },
+            }
+    </script>
+
+    <style>
+      body { 
+        font-family: 'Manrope', sans-serif; background-color: #fef9f2;
+       }
+       body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-image: url('imgs/michelange.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }     
+      .font-space { 
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .reveal-text {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s, transform 1s;
+      }
+      .reveal-text.reveal {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .image-reveal {
+        opacity: 0;
+        transform: translateY(50px); /* Initial position off-screen to the left */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .image-reveal.reveal {
+        opacity: 1;
+        transform: translateY(0); /* Translate to the original position */
+      }
+    </style>
+  </head>
+
+  <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#fef9f2]/60 dark:bg-black/75 backdrop-blur-xl rounded-b-2xl">
+      <div class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-[1920px] mx-auto">
+        <div class="relative flex items-center h-10 text-2xl font-black tracking-tight text-black dark:text-white font-space">
+          <a href="#home" class="flex items-center">
+          <img id="nav-logo" src="imgs/logob.png" alt="AL DEV Logo" class="absolute h-9 w-auto object-contain opacity-0 transition-opacity duration-300">
+          <span id="nav-text" class="opacity-100 transition-opacity duration-300">
+            ALIX
+          </span>
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-12">
+          <a class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300" href="#work">Work</a>
+          <a class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300" href="#about">About</a>
+          <a class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300" href="#contact">Contact</a>
+        </div>
+        <!-- Button : Google Calendar Appointment Scheduling begin -->
+        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+        <script>
+        (function() {
+          var target = document.currentScript;
+          window.addEventListener('load', function() {
+            calendar.schedulingButton.load({
+              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2TPwyVDw3lcjJh1iktj9pPNfGtwdAJiBKrmVKg3tUIeCkxHjDkpMlkuXUFLnwkS8dpRJTnVHCQ?gv=true',
+              color: '#000000',
+              label: 'Booking',
+              target,
+            });
+          });
+        })();
+        </script>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+    </nav>
+    <!-- Mobile Navigation Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#fef9f2]/75 backdrop-blur-lg border-t border-black/5 z-50 px-6 py-4 flex justify-around items-center">
+      <div class="flex flex-col items-center gap-1 text-neutral-400">
+        <a href="#work" class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300">
+          <span class="material-symbols-outlined">computer</span>
+        </a>
+        <span class="font-space text-[10px] font-bold uppercase tracking-tighter">Work</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 text-neutral-400">
+        <a href="#about" class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300">
+          <span class="material-symbols-outlined">info</span>
+        </a>
+        <span class="font-space text-[10px] font-bold uppercase tracking-tighter">About</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 text-neutral-400">
+        <a href="#contact" class="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white font-space tracking-tighter uppercase text-sm font-bold transition-colors duration-300">
+          <span class="material-symbols-outlined cursor-pointer">mail</span>
+        </a>
+        <span class="font-space text-[10px] font-bold uppercase tracking-tighter">Contact</span>
+      </div>
+    </div>
+
+    <main class="max-md:pb-[39px]">
+      <!-- Hero Section -->
+      <section class="px-6 md:px-12 pt-32 pb-20 min-h-screen bg-surface/60" id="home">
+        <div class="max-w-[1920px] mx-auto">
+          <div class="flex flex-col items-start gap-4 mb-12">
+            <span class="text-sm font-bold tracking-[0.3em] text-secondary uppercase font-body">Available for <script>document.write(new Date().getFullYear())</script></span>
+            <h1 class="text-[clamp(3rem,12vw,7rem)] font-black font-space leading-[0.85] tracking-tighter uppercase">
+              ALIX LY<br/>FRONT END<br/>DEVELOPER.
+            </h1>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+            <div class="md:col-span-7">
+              <div class="w-full aspect-[16/7] bg-surface-container overflow-hidden group rounded-[20px]">
+                <img alt="Happy fish family" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Happy fish family" src="imgs/heropic.png"/>
+              </div>
+            </div>
+            <div class="md:col-span-5 md:pl-12">
+              <p class="text-lg md:text-xl leading-snug font-light font-black max-w-md text-justify">
+                <span class="font-bold">Building</span> responsive web design for small businesses and creatives, along with logo and business card design. <br>
+                <span class="font-bold">Helping</span> you get found through Google services (Maps, SEO) and grow your reputation with smart review tap cards.
+              </p>
+              <div class="mt-8 flex items-center gap-4">
+                <span class="material-symbols-outlined text-4xl" data-icon="south_east">south_east</span>
+                <span class="text-xs font-bold uppercase tracking-widest font-body">Scroll to Explore</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Work Section -->
+      <section class="bg-surface-container-low/80 py-24 px-6 md:px-12" id="work">
+        <div class="max-w-[1920px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-baseline mb-24 border-b border-outline-variant/20 pb-8">
+            <h2 class="text-5xl md:text-7xl font-bold font-space tracking-tight uppercase reveal-text">Works.</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
+            <!-- Portfolio 1 (Tony Bodin) -->
+            <div class="md:col-span-8 flex flex-col gap-6">
+              <div class="overflow-hidden">
+                <a href="https://tonybodin.github.io/acteur/" target="_blank">
+                  <img alt="Picture of Tony Bodin" class="w-full aspect-video md:aspect-[4/3] object-cover grayscale hover:grayscale-0 transition-all duration-1000 rounded-[20px] reveal-text" data-alt="Picture of Tony Bodin" src="imgs/tony.jpg"/>
+                </a>
+              </div>
+              <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                <div>
+                  <h3 class="text-3xl font-space font-bold uppercase">Tony Bodin</h3>
+                  <p class="text-on-surface-variant text-sm uppercase tracking-widest mt-2">Actor Portfolio</p>
+                </div>
+                <a class="hidden md:flex group items-center gap-2 text-sm font-bold uppercase tracking-widest" href="https://tonybodin.github.io/acteur/" target="_blank">
+                  View Case Study
+                  <span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform inline-block" data-icon="arrow_upward">arrow_upward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Trigger point (Right Aligned, Smaller) -->
+            <div class="md:col-span-4 md:mt-24 flex flex-col gap-6">             
+              <div class="overflow-hidden">
+                <a href="https://alxixla.github.io/triggerpointnc/" target="_blank">
+                  <img alt="Design detail" class="w-full aspect-video md:aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-1000 rounded-[20px] reveal-text" data-alt="Close up of high quality typography printed on textured off-white paper showing sharp letterforms and ink details" src="imgs/triggerp.png"/>
+                </a>
+              </div>
+              <div>
+                <h3 class="text-3xl md:text-2xl font-space font-bold uppercase">Trigger point NC</h3> 
+                <p class="text-on-surface-variant text-sm uppercase tracking-widest mt-2">Massage therapist</p>             
+              </div>
+              <a class="hidden md:flex group items-center gap-2 text-sm font-bold uppercase tracking-widest" href="https://alxixla.github.io/triggerpointnc/" target="_blank">
+                View Case Study
+                <span class="material-symbols-outlined group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform inline-block" data-icon="arrow_outward">arrow_outward</span>
+              </a>
+            </div>
+            <!-- Project 3 (Centered, Floating) -->
+            <div class="md:col-start-3 md:col-span-7 flex flex-col gap-6">
+              <div class="overflow-hidden">
+                <a href="https://alyx-art.netlify.app/" target="_blank">
+                  <img alt="Abstract work" class="w-full aspect-[16/9] object-cover grayscale hover:grayscale-0 transition-all duration-1000 rounded-[20px] reveal-text" data-alt="Abstract 3D flowing shapes in neutral beige and charcoal tones with a soft grainy texture and studio lighting" src="imgs/alyx.jpg"/>
+                </a>
+              </div>
+              <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+                <div>
+                  <h3 class="text-3xl font-space font-bold uppercase">Alyx</h3>
+                  <p class="text-on-surface-variant text-sm uppercase tracking-widest mt-2">Artist Portfolio</p>
+                </div>
+                  <a class="hidden md:flex group flex items-center gap-2 text-sm font-bold uppercase tracking-widest" href="https://alyx-art.netlify.app/" target="_blank">
+                    View Case Study
+                    <span class="material-symbols-outlined group-hover:-translate-y-1 transition-transform inline-block" data-icon="arrow_upward">arrow_upward</span>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="py-24 px-6 md:px-12 bg-surface/80" id="about">
+        <div class="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-6 flex flex-col gap-8">
+            <h2 class="text-5xl md:text-8xl font-black font-space tracking-tighter uppercase leading-none reveal-text z-10">THE <br/>developer.</h2>
+            <div class="max-w-xl">
+              <p class="text-2xl md:text-3xl font-light leading-relaxed text-on-surface">
+                Hello! I'm Alix, a self-taught front-end developer, painter and drawer. 
+              </p>
+              <p class="mt-6 text-on-surface-variant leading-relaxed text-justify">
+                My coding journey began in 2019 during the Covid-19 pandemic. Stuck at home, I turned to YouTube videos to grasp the fundamentals of web development. Soon thereafter, I embarked on building my own website to showcase my art and found immense joy in the process. Eager to expand my skills, I enrolled in a free online course on FreeCodeCamp, which greatly enhanced my coding abilities. Subsequently, I acquired a 
+                <a href="https://www.freecodecamp.org/certification/fcc846122f3-1cf3-45fc-8ca6-6a45fa5705eb/responsive-web-design" class="underline hover:no-underline font-bold" target="_blank">Certificate in Responsive Design</a>, and ever since, I've dedicated myself to coding and mastering new technologies nearly every day.
+              </p>
+            </div>
+          </div>
+          <div class="md:col-span-6">
+            <div class="aspect-video md:aspect-[4/5] overflow-hidden">
+              <img alt="Portrait of Alix Ly" class="w-full aspect-[16/9] md:h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 rounded-[20px] reveal-text" data-alt="Photo of Alix in Sydney" src="imgs/sydney.jpeg"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="py-24 px-6 md:px-12 bg-surface-container-low/80 border-t border-outline-variant/20" id="contact">
+        <div class="max-w-[1920px] mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+            <div class="md:col-span-5">
+              <h2 class="text-6xl md:text-8xl font-black font-space tracking-tighter uppercase leading-[0.85] mb-12 reveal-text">
+                Let's <br/>Build.
+              </h2>
+              <div class="space-y-8">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[0.3em] text-secondary mb-2">Social</p>
+                  <div class="flex gap-6">
+                    <a href="https://www.linkedin.com/in/alix-ly-webdev/" class="font-space uppercase font-bold text-sm tracking-widest hover:line-through" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/alxixla" class="font-space uppercase font-bold text-sm tracking-widest hover:line-through" target="_blank">GitHub</a>
+                    <a href="https://www.instagram.com/alyxcalligraphy/" class="font-space uppercase font-bold text-sm tracking-widest hover:line-through" target="_blank">Instagram</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:col-span-7">
+              <div id="successMessage" style="display:none;" class="text-center py-12">
+                <h3 class="text-2xl font-bold text-primary mb-2">Inquiry Sent!</h3>
+                <p class="text-neutral-600">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+              </div>
+              <!--Google form-->
+              <script type="text/javascript"> 
+                let submitted = false;
+                function formHandle() {
+                  if(submitted) {
+                    // Hide the form and show the success message
+                    document.getElementById("myForm").style.display = "none";
+                    document.getElementById("successMessage").style.display = "block";
+                  }
+                }
+              </script>
+              <iframe name="invisibleFrame" id="invisibleFrame" style="display:none;" onload="formHandle()"></iframe>
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLSdb-YP6aNkEtqwN60U7ksHeGI3jrYZg9luJRm66dIjzgc5p_A/formResponse" class="grid grid-cols-1 md:grid-cols-2 gap-8" method="post" target="invisibleFrame" id="myForm" onsubmit="submitted=true;">
+                <div class="flex flex-col gap-2">
+                  <label class="text-[10px] font-bold uppercase tracking-widest text-secondary">Name</label>
+                  <input type="text" placeholder="Your Name" name="entry.2005620554" required class="bg-transparent border-b border-black/50 focus:border-black outline-none py-4 px-2 transition-colors placeholder:text-neutral-400 font-body rounded-[10px]"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-[10px] font-bold uppercase tracking-widest text-secondary">Email</label>
+                  <input type="email" placeholder="email@example.com" name="entry.1045781291" required class="bg-transparent border-b border-black/50 focus:border-black outline-none py-4 px-2 transition-colors placeholder:text-neutral-400 font-body rounded-[10px]"/>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2 mt-4">
+                  <label class="text-[10px] font-bold uppercase tracking-widest text-secondary">Message</label>
+                  <textarea rows="4" placeholder="Tell me about your project" name="entry.839337160" required class="bg-transparent border-b border-black/50 focus:border-black outline-none py-4 px-2 transition-colors resize-none placeholder:text-neutral-400 font-body rounded-[10px]"></textarea>
+                </div>
+                <div class="md:col-span-2 mt-8">
+                  <button type="submit" class="group flex items-center gap-4 bg-primary text-on-primary px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] hover:bg-neutral-800 transition-all rounded-[12px]">
+                    Send Inquiry
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                  </button>
+                </div>
+              </form>
+              <!--End Google form--> 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-black/85 text-white py-10 px-6 md:px-12">
+        <div class="max-w-[1920px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-20">
+            <div>
+              <div class="text-6xl font-black font-space tracking-tighter mb-4">ALIX</div>
+              <p class="max-w-xs text-neutral-400 font-light text-sm leading-relaxed">
+                Most fish stay underwater <br/>
+                The bold ones jump out <br/>
+                Be that fish <br/>
+                Make your business stand out <span class="material-symbols-outlined">heart_smile</span>               
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-x-16 gap-y-8">
+              <div class="flex flex-col gap-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Offices</span>
+                <p class="text-sm uppercase font-space font-medium">Osaka - Japan</p>
+                <p class="text-sm uppercase font-space font-medium">Remote / Global</p>
+              </div>
+            </div>
+          </div>
+          <div class="pt-8 border-t border-white/10 flex flex-col items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-space">
+            <div class="w-full flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+              <span class="w-full md:w-1/3 text-center md:text-left">
+                All Rights Reserved <script>document.write(new Date().getFullYear())</script>©
+              </span>
+              <div class="w-full md:w-1/3 flex justify-center">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+              </div>
+              <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                <a class="hover:text-white transition-colors cursor-pointer" onclick="toggleCreditsDrawer()">Credit</a>
+              </div>
+            </div>
+            <div class="w-full flex justify-center">
+              <a href="#home"><img id="nav-logo" src="imgs/whitelgnb.png" alt="AL DEV Logo" class="h-12"></a>
+            </div> 
+          </div>
+        </div>
+      </footer>
+
+      <!-- Credits Drawer -->
+      <div class="fixed top-1/2 left-1/2 w-[90%] md:w-[450px] max-h-[80vh] bg-stone-50 dark:bg-stone-950 z-[100] transform -translate-x-1/2 -translate-y-1/2 scale-95 opacity-0 pointer-events-none transition-all duration-300 ease-in-out shadow-[0_32px_64px_-12px_rgba(0,0,0,0.3)] p-10 md:p-14 flex flex-col overflow-y-auto rounded-2xl border border-stone-200/50 dark:border-stone-800/50 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" id="credits-drawer">
+        <div class="absolute top-6 right-6">
+          <button class="font-bold dark:text-surface hover:opacity-70 transition-opacity" onclick="toggleCreditsDrawer()">
+            <span class="material-symbols-outlined text-3xl">close</span>
+          </button>
+        </div>
+        <div class="flex-1 flex flex-col justify-center py-8">
+          <img src="imgs/logob.png" alt="AL DEV Logo" class="w-11 h-11 mb-6">
+          <h3 class="text-3xl font-black font-space mb-8">CREDITS</h3>
+            <div class="space-y-2">
+            <p class="text-on-surface-variant font-light text-lg">
+              Web Developer: <a class="font-bold inline-block transition-all hover:brightness-125" href="#">Myself</a>
+            </p>           
+            <p class="text-on-surface-variant font-light text-lg">
+              Project 1: <a class="font-bold inline-block transition-all hover:brightness-125" href="#" target="_blank">Tony Bodin</a>
+            </p>
+            <p class="text-on-surface-variant font-light text-lg">
+              Project 2: <a class="font-bold inline-block transition-all hover:brightness-125" href="#" target="_blank">Sebastien</a>
+            </p>
+            <p class="text-on-surface-variant font-light text-lg">
+              Project 3: <a class="font-bold inline-block transition-all hover:brightness-125" href="#" target="_blank">Alyx</a>
+            </p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-outline-variant/10">
+          <span class="font-bold tracking-widest text-primary/30 dark:text-surface/30">Al Dev</span>
+        </div>
+      </div>
+      <!-- Overlay -->
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-300 pointer-events-none" id="credits-overlay" onclick="toggleCreditsDrawer()"></div>
+      <script>
+        function toggleCreditsDrawer() {
+          const drawer = document.getElementById('credits-drawer');
+          const overlay = document.getElementById('credits-overlay');
+          const isOpen = !drawer.classList.contains('opacity-0');
+
+          if (isOpen) {
+            drawer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+              overlay.classList.add('hidden');
+            }, 300);
+          } else {
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+              drawer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+              overlay.classList.remove('opacity-0', 'pointer-events-none');
+            }, 10);
+          }
+        }
+      </script>
+      <!-- end Credits Drawer -->
+
+    </main>
+  </body>
+</html>
